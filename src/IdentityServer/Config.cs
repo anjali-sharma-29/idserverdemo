@@ -43,19 +43,19 @@ namespace IdentityServer
                     },
                    new Client
                     {
-                    ClientId = "mvc",
-                    ClientSecrets = { new Secret("secret".Sha256()) },
-                    AllowedGrantTypes = GrantTypes.Code,
-                    // where to redirect to after login
-                    RedirectUris = { "https://localhost:44316/signin-oidc" },
-                    // where to redirect to after logout
-                    PostLogoutRedirectUris = { "https://localhost:44316/signout-callback-oidc"},
-                    AllowedScopes = new List<string>
-                    {
-                    IdentityServerConstants.StandardScopes.OpenId,
-                    IdentityServerConstants.StandardScopes.Profile,
-                    "api1"
-                    }
+                            ClientId = "mvc",
+                            ClientSecrets = { new Secret("secret".Sha256()) },
+                            AllowedGrantTypes = GrantTypes.Code,
+                            // where to redirect to after login
+                            RedirectUris = { "https://localhost:44316/signin-oidc" },
+                            // where to redirect to after logout
+                            PostLogoutRedirectUris = { "https://localhost:44316/signout-callback-oidc"},
+                            AllowedScopes = new List<string>
+                            {
+                            IdentityServerConstants.StandardScopes.OpenId,
+                            IdentityServerConstants.StandardScopes.Profile,
+                            "api1"
+                            }
                     },
                    // JavaScript Client
                    new Client

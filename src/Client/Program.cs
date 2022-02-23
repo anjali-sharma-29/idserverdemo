@@ -27,7 +27,7 @@ namespace Client
                 ClientId = "client",
                 ClientSecret = "secret",
 
-                Scope = "api1"
+                Scope = "api2"
             });
 
             if (tokenResponse.IsError)
@@ -41,8 +41,8 @@ namespace Client
 
             // call api
             var apiClient = new HttpClient();
-            apiClient.SetBearerToken(tokenResponse.IdentityToken);
-           // apiClient.SetBearerToken(tokenResponse.AccessToken);
+            //apiClient.SetBearerToken(tokenResponse.IdentityToken);
+            apiClient.SetBearerToken(tokenResponse.AccessToken);
 
             try
             {
@@ -60,6 +60,7 @@ namespace Client
             catch (Exception ex) {
                 Console.WriteLine(ex);
             }
+            Console.ReadLine();
         }
     }
 }
